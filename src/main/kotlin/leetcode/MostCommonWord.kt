@@ -12,12 +12,11 @@ class MostCommonWord {
    *   가장 빈도가 높은 단어를 반환한다.
    */
   fun mostCommonWord(paragraph: String, banned: Array<String>): String {
-    val bannedSet = banned.toSet()
     val wordCount = HashMap<String, Int>()
 
     paragraph.lowercase()
     .split("[!?',:;. ]".toRegex())
-    .filter { it.isNotEmpty() && it !in bannedSet }
+    .filter { it.isNotEmpty() && it !in banned }
     .forEach { wordCount[it] = (wordCount[it] ?: 0) + 1}
 
     return wordCount.maxByOrNull { it.value }?.key ?: ""
