@@ -1,4 +1,4 @@
-package xyz.pubps.leetcode
+package xyz.pubps.leetcode.string
 
 class LogsV1 {
   /**
